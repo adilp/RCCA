@@ -1,0 +1,38 @@
+
+<div>
+    <h2><span translate="rccaApp.nurseSchedule.detail.title">NurseSchedule</span> {{nurseSchedule.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="rccaApp.nurseSchedule.scheduleDate">ScheduleDate</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{nurseSchedule.scheduleDate}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="rccaApp.nurseSchedule.nurse">nurse</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{nurseSchedule.nurse.name}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="nurseSchedule"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

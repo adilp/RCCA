@@ -1,0 +1,40 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "nurse",
+            "relationshipNameCapitalized": "Nurse",
+            "relationshipFieldName": "nurse",
+            "otherEntityName": "nurse",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Nurse",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "scheduleDate",
+            "fieldType": "LocalDate",
+            "fieldNameCapitalized": "ScheduleDate",
+            "fieldNameUnderscored": "schedule_date",
+            "fieldInJavaBeanMethod": "ScheduleDate",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOwnerOneToOne": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": true,
+    "fieldsContainCustomTime": true,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150615185024",
+    "dto": "no",
+    "pagination": "no",
+    "validation": true
+}

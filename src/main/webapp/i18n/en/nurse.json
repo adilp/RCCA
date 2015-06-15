@@ -1,0 +1,21 @@
+{
+    "rccaApp": {
+        "nurse" : {
+            "home": {
+                "title": "Nurses",
+                "createLabel": "Create a new Nurse",
+                "createOrEditLabel": "Create or edit a Nurse"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Nurse {{ id }}?"
+            },
+            "detail": {
+                "title": "Nurse"
+            },
+            "name": "Name",
+            "isActive": "IsActive",
+            "nurseId": "NurseId",
+            "nurseScheduleDate": "nurseScheduleDate"
+        }
+    }
+}

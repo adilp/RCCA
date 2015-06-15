@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <property name="now" value="now()" dbms="mysql,h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <!--
+        Added the entity NurseSchedule.
+    -->
+    <changeSet id="20150615185024" author="jhipster">
+        <createTable tableName="NURSESCHEDULE">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="schedule_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="nurse_id" type="bigint"/>
+        </createTable>
+        
+        <addForeignKeyConstraint baseColumnNames="nurse_id"
+                                 baseTableName="NURSESCHEDULE"
+                                 constraintName="fk_nurseschedule_nurse_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="NURSE"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,126 @@
+<div>
+
+    <h2 translate="rccaApp.nurseSchedule.home.title">NurseSchedules</h2>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#saveNurseScheduleModal" ng-click="clear()">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="rccaApp.nurseSchedule.home.createLabel">Create a new NurseSchedule</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="saveNurseScheduleModal" tabindex="-1" role="dialog" aria-labelledby="myNurseScheduleLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myNurseScheduleLabel" translate="rccaApp.nurseSchedule.home.createOrEditLabel">Create or edit a NurseSchedule</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="nurseSchedule.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="rccaApp.nurseSchedule.scheduleDate">ScheduleDate</label>
+                            <input type="date" class="form-control" name="scheduleDate"
+                                   ng-model="nurseSchedule.scheduleDate" required>
+
+                            <div ng-show="editForm.scheduleDate.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.scheduleDate.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="rccaApp.nurseSchedule.nurse">nurse</label>
+                            <select class="form-control" name="nurse" ng-model="nurseSchedule.nurse.id" ng-options="nurse.id as nurse.name for nurse in nurses">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteNurseScheduleConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(nurseSchedule.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="rccaApp.nurseSchedule.delete.question" translate-values="{id: '{{nurseSchedule.id}}'}">Are you sure you want to delete this NurseSchedule?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="rccaApp.nurseSchedule.scheduleDate">ScheduleDate</th>
+                    <th translate="rccaApp.nurseSchedule.nurse">nurse</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="nurseSchedule in nurseSchedules">
+                    <td><a ui-sref="nurseScheduleDetail({id:nurseSchedule.id})">{{nurseSchedule.id}}</a></td>
+                    <td>{{nurseSchedule.scheduleDate}}</td>
+                    <td>{{nurseSchedule.nurse.name}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="nurseScheduleDetail({id:nurseSchedule.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="showUpdate(nurseSchedule.id)"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(nurseSchedule.id)"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

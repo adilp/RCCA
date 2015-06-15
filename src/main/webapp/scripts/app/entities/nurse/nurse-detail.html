@@ -1,0 +1,46 @@
+
+<div>
+    <h2><span translate="rccaApp.nurse.detail.title">Nurse</span> {{nurse.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="rccaApp.nurse.name">Name</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{nurse.name}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="rccaApp.nurse.isActive">IsActive</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{nurse.isActive}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="rccaApp.nurse.nurseId">NurseId</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{nurse.nurseId}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="nurse"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

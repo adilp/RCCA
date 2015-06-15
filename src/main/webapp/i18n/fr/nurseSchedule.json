@@ -1,0 +1,20 @@
+{
+    "rccaApp": {
+        "nurseSchedule" : {
+            "home": {
+                "title": "NurseSchedules",
+                "createLabel": "Créer un nouveau NurseSchedule",
+                "createOrEditLabel": "Créer ou éditer un NurseSchedule"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le NurseSchedule {{ id }} ?"
+            },
+            "detail": {
+                "title": "NurseSchedule"
+            },
+            "scheduleDate": "ScheduleDate",
+            "nurse": "nurse"
+        }
+    }
+}
+

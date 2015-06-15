@@ -1,0 +1,61 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "nurseScheduleDate",
+            "relationshipNameCapitalized": "NurseScheduleDate",
+            "relationshipFieldName": "nurseScheduleDate",
+            "otherEntityName": "nurseSchedule",
+            "relationshipType": "one-to-many",
+            "otherEntityNameCapitalized": "NurseSchedule",
+            "otherEntityRelationshipName": "nurse"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Name",
+            "fieldNameUnderscored": "name",
+            "fieldInJavaBeanMethod": "Name",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "isActive",
+            "fieldType": "Boolean",
+            "fieldNameCapitalized": "IsActive",
+            "fieldNameUnderscored": "is_active",
+            "fieldInJavaBeanMethod": "IsActive",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "nurseId",
+            "fieldType": "Integer",
+            "fieldNameCapitalized": "NurseId",
+            "fieldNameUnderscored": "nurse_id",
+            "fieldInJavaBeanMethod": "NurseId",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOwnerOneToOne": false,
+    "fieldsContainOneToMany": true,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150615184944",
+    "dto": "no",
+    "pagination": "no",
+    "validation": true
+}
